@@ -193,3 +193,42 @@ A user story is considered **Done** when all of the following conditions have be
 * [ ] The implementation does not introduce known errors into previously completed functionality.
 * [ ] Relevant documentation has been updated.
 * [ ] The completed functionality can be demonstrated during the Sprint Review.
+
+## Sprint 1 - Execution
+
+Deliver a functional calculator capable of accepting numeric input and performing addition, supported by automated tests and continuous integration.
+
+### 1. Backlog Items Delivered
+
+* **User story 1:** As a user, I want to enter numbers into the calculator so that I can perform calculations.
+* **User story 2:** As a user, I want to add two numbers so that I can calculate their sum.
+
+### 2. Commit History
+
+The work was split into 2 separate branches. A ``development`` branch where all the changes to the code took place, underwent unit tests through the CI pipeline (GitHub Actions), and finally were approved through a pull request into the ``main`` branch.
+
+![alt text](images/image.png)
+
+### 3. Unit Tests and CI Pipeline
+
+* **Unit Test:**
+
+![alt text](images/image-3.png)
+
+* **CI Pipeline:**
+
+![alt text](images/image-1.png)
+
+### 4. Sprint Review
+
+Product Demo:
+
+![alt text](images/image-2.png)
+
+### 5. Retrospective
+
+**Improvements for Sprint 2:**
+
+* Bring User story 7 to 3 position. The app needs a way to clear the interface instead of re-loading the page everytime.
+* Deliver the User stories first and then create the unit tests after. It is more efficient to test everything together.
+* Deliver more than 3 user stories next time instead of 2. The effort required to do this will match the devloper's ability
