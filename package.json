@@ -1,0 +1,24 @@
+{
+  "name": "calcflow-agile-and-devops-project",
+  "version": "1.0.0",
+  "description": "A project demonstrating my ability to independently apply Agile principles and DevOps practices to plan, execute, and iteratively deliver a working solution.",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Molo-M/CalcFlow-Agile-and-DevOps-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Molo-M/CalcFlow-Agile-and-DevOps-Project/issues"
+  },
+  "homepage": "https://github.com/Molo-M/CalcFlow-Agile-and-DevOps-Project#readme",
+  "devDependencies": {
+    "jest": "^30.5.2"
+  }
+}
