@@ -10,6 +10,13 @@ function appendNumber(currentValue, value) {
     return currentValue + value;
 }
 
+function addNumbers(firstNumber, secondNumber) {
+    return firstNumber + secondNumber;
+}
+
 if (typeof module !== "undefined") {
-    module.exports = { appendNumber };
+    module.exports = {
+        appendNumber,
+        addNumbers
+    };
 }
