@@ -2,7 +2,10 @@ const {
     appendNumber,
     addNumbers,
     subtractNumbers,
-    clearCalculator
+    clearCalculator,
+    logCalculation,
+    logCalculationError,
+    checkCalculatorHealth
 } = require("../calculator");
 
 describe("Number Input", () => {
@@ -74,6 +77,84 @@ describe("Clear Calculator", () => {
 
     test("should reset the selected operation", () => {
         expect(clearCalculator().selectedOperation).toBeNull();
+    });
+
+});
+
+// Error and Logging tests
+
+describe("Application Logging", () => {
+
+    afterEach(() => {
+        jest.restoreAllMocks();
+    });
+
+    test("should log a successful calculation", () => {
+        const logSpy = jest
+            .spyOn(console, "info")
+            .mockImplementation(() => {});
+
+        logCalculation("+", 5, 3, 8);
+
+        expect(logSpy).toHaveBeenCalledWith(
+            "[CalcFlow] Calculation: 5 + 3 = 8"
+        );
+    });
+
+    test("should log an application error", () => {
+        const errorSpy = jest
+            .spyOn(console, "error")
+            .mockImplementation(() => {});
+
+        logCalculationError("Invalid calculation");
+
+        expect(errorSpy).toHaveBeenCalledWith(
+            "[CalcFlow] Error: Invalid calculation"
+        );
+    });
+
+});
+
+describe("Application Health Check", () => {
+
+    afterEach(() => {
+        jest.restoreAllMocks();
+    });
+
+    test("should report healthy when all components are available", () => {
+        const logSpy = jest
+            .spyOn(console, "info")
+            .mockImplementation(() => {});
+
+        const result = checkCalculatorHealth({
+            display: true,
+            numberButtons: true,
+            operationButtons: true,
+            equalsButton: true,
+            clearButton: true
+        });
+
+        expect(result).toBe(true);
+        expect(logSpy).toHaveBeenCalledWith(
+            "[CalcFlow] Health check passed."
+        );
+    });
+
+    test("should report unhealthy when a component is missing", () => {
+        const errorSpy = jest
+            .spyOn(console, "error")
+            .mockImplementation(() => {});
+
+        const result = checkCalculatorHealth({
+            display: true,
+            numberButtons: true,
+            clearButton: false
+        });
+
+        expect(result).toBe(false);
+        expect(errorSpy).toHaveBeenCalledWith(
+            "[CalcFlow] Health check failed. Missing: clearButton"
+        );
     });
 
 });
