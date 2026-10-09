@@ -28,5 +28,7 @@ equalsButton.addEventListener("click", () => {
 
     if (selectedOperation === "+") {
         display.value = addNumbers(firstNumber, secondNumber);
+    } else if (selectedOperation === "-") {
+        display.value = subtractNumbers(firstNumber, secondNumber);
     }
 });

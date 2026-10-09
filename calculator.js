@@ -14,9 +14,14 @@ function addNumbers(firstNumber, secondNumber) {
     return firstNumber + secondNumber;
 }
 
+function subtractNumbers(firstNumber, secondNumber) {
+    return firstNumber - secondNumber;
+}
+
 if (typeof module !== "undefined") {
     module.exports = {
         appendNumber,
-        addNumbers
+        addNumbers,
+        subtractNumbers
     };
 }
