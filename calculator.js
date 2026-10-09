@@ -18,10 +18,19 @@ function subtractNumbers(firstNumber, secondNumber) {
     return firstNumber - secondNumber;
 }
 
+function clearCalculator() {
+    return {
+        displayValue: "0",
+        firstNumber: null,
+        selectedOperation: null
+    };
+}
+
 if (typeof module !== "undefined") {
     module.exports = {
         appendNumber,
         addNumbers,
-        subtractNumbers
+        subtractNumbers,
+        clearCalculator
     };
 }

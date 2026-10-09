@@ -2,6 +2,7 @@ const display = document.getElementById("display");
 const numberButtons = document.querySelectorAll(".number-btn");
 const operationButtons = document.querySelectorAll(".operation-btn");
 const equalsButton = document.querySelector(".equals-btn");
+const clearButton = document.querySelector(".clear-btn");
 
 let firstNumber = null;
 let selectedOperation = null;
@@ -31,4 +32,12 @@ equalsButton.addEventListener("click", () => {
     } else if (selectedOperation === "-") {
         display.value = subtractNumbers(firstNumber, secondNumber);
     }
+});
+
+clearButton.addEventListener("click", () => {
+    const state = clearCalculator();
+
+    display.value = state.displayValue;
+    firstNumber = state.firstNumber;
+    selectedOperation = state.selectedOperation;
 });

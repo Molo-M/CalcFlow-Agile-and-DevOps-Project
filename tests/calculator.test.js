@@ -1,7 +1,8 @@
 const {
     appendNumber,
     addNumbers,
-    subtractNumbers
+    subtractNumbers,
+    clearCalculator
 } = require("../calculator");
 
 describe("Number Input", () => {
@@ -57,6 +58,22 @@ describe("Subtraction", () => {
 
     test("should return a negative result when the second number is larger", () => {
         expect(subtractNumbers(3, 8)).toBe(-5);
+    });
+
+});
+
+describe("Clear Calculator", () => {
+
+    test("should reset the display to zero", () => {
+        expect(clearCalculator().displayValue).toBe("0");
+    });
+
+    test("should reset the first number", () => {
+        expect(clearCalculator().firstNumber).toBeNull();
+    });
+
+    test("should reset the selected operation", () => {
+        expect(clearCalculator().selectedOperation).toBeNull();
     });
 
 });
