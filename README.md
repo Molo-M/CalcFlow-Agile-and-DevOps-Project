@@ -227,8 +227,13 @@ Product Demo:
 
 ### 5. Retrospective
 
+**What went well**
+
+* User stories were implemented incrementally using a dedicated development branch.
+* Automated unit tests and GitHub Actions helped verify changes before merging.
+* Pull Requests and a consistent commit history provided evidence of iterative development.
+
 **Improvements for Sprint 2:**
 
-* Bring User story 7 to 3 position. The app needs a way to clear the interface instead of re-loading the page everytime.
-* Deliver the User stories first and then create the unit tests after. It is more efficient to test everything together.
-* Deliver more than 3 user stories next time instead of 2. The effort required to do this will match the devloper's ability
+1. Prioritize usability issues: Implement the Clear button (User story 6) so users can reset the calculator without reloading the page.
+2. Improve sprint planning: Aim to deliver three user stories in Sprint 2, while ensuring each meets the Definition of Done rather than prioritizing quantity over quality.

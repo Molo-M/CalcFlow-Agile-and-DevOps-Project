@@ -1,6 +1,7 @@
 const {
     appendNumber,
-    addNumbers
+    addNumbers,
+    subtractNumbers
 } = require("../calculator");
 
 describe("Number Input", () => {
@@ -40,6 +41,22 @@ describe("Addition", () => {
 
     test("should add positive and negative numbers", () => {
         expect(addNumbers(10, -3)).toBe(7);
+    });
+
+});
+
+describe("Subtraction", () => {
+
+    test("should subtract two whole numbers", () => {
+        expect(subtractNumbers(10, 3)).toBe(7);
+    });
+
+    test("should subtract two decimal numbers", () => {
+        expect(subtractNumbers(5.5, 2.5)).toBe(3);
+    });
+
+    test("should return a negative result when the second number is larger", () => {
+        expect(subtractNumbers(3, 8)).toBe(-5);
     });
 
 });
